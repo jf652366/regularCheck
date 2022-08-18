@@ -1,0 +1,112 @@
+{
+  "name": "@zhengxs2018/npm-module-boilerplate",
+  "version": "0.1.0",
+  "description": "Using rollup.js to build, a re-usable NPM module for run in nodejs and browser.",
+  "main": "./dist/index.common.js",
+  "module": "./dist/index.esm.js",
+  "browser": "./dist/index.umd.js",
+  "types": "./types/index.d.ts",
+  "keywords": [],
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "rollup -c rollup.config.js",
+    "postbuild": "tsc --project ./tsconfig.prod.json",
+    "preanalyse": "npm run build",
+    "analyse": "source-map-explorer ./dist/*.min.js",
+    "clean": "node ./scripts/clean.js",
+    "lint": "eslint \"**/*.{ts,js}\" --ignore-path .gitignore --cache --fix",
+    "format": "prettier \"**/*.{js,json,ts,md}\" --write",
+    "test": "jest",
+    "cov": "jest --coverage",
+    "ci": "jest --coverage ----coverageReporters=json",
+    "ts-check": "api-extractor run --local",
+    "ts-doc": "typedoc",
+    "doc": "typedoc --options typedoc.js ./src",
+    "commit": "cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "preversion": "npm run lint && npm test",
+    "version": "npm run changelog",
+    "postversion": "git push --follow-tags",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "types",
+    "LICENSE.txt",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.15.2",
+    "@pobedit/package-name-parser": "^1.0.0",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-replace": "^3.0.0",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/lodash": "^4.14.169",
+    "@types/node": "^16.7.2",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "builtin-modules": "^3.1.0",
+    "commitizen": "^4.2.4",
+    "commitlint": "^13.1.0",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "del": "^6.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-tsdoc": "^0.2.14",
+    "husky": "^7.0.2",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.1.2",
+    "lodash": "^4.17.15",
+    "parse-pkg-name": "^2.0.0",
+    "prettier": "^2.3.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-filesize": "^9.1.0",
+    "rollup-plugin-node-externals": "^2.2.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "source-map-explorer": "^2.5.2",
+    "ts-jest": "^27.0.5",
+    "tslib": "^2.3.1",
+    "typedoc": "^0.21.8",
+    "typescript": "^4.4.0"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "homepage": "https://github.com/zhengxs2018/shared-node-browser-library-boilerplate#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhengxs2018/shared-node-browser-library-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhengxs2018/shared-node-browser-library-boilerplate/issues"
+  },
+  "author": {
+    "name": "zhengxs2018",
+    "email": "zhengxs2018@foxmail.com"
+  },
+  "license": "MIT"
+}

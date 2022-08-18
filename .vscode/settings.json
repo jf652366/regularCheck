@@ -1,0 +1,51 @@
+{
+  "telemetry.enableCrashReporter": false,
+  "search.followSymlinks": false,
+  "search.exclude": {
+    "**/.history": true,
+    "**/dist/**": true,
+    "**/docs/**": true
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1500,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.history": true
+  },
+  "files.watcherExclude": {
+    "**/.history/**": true,
+    "**/dist/**": true,
+    "**/docs/**": true
+  },
+  "files.associations": {
+    "api-extractor.json": "jsonc"
+  },
+  "editor.minimap.enabled": false,
+  "cSpell.words": [
+    "codecov",
+    "newname",
+    "postbuild",
+    "preanalyse",
+    "prebuild",
+    "sourcemap",
+    "parens",
+    "pobedit"
+  ],
+  "cSpell.ignoreWords": [
+    "filesize",
+    "postpublish",
+    "rollupjs",
+    "commitlint",
+    "tsdoc",
+    "typedoc"
+  ],
+  "cSpell.ignorePaths": [
+    ".history",
+    ".vscode",
+    "dist",
+    "package-lock.json",
+    "yarn.lock"
+  ]
+}
