@@ -1,5 +1,5 @@
 {
-  "name": "@zhengxs2018/npm-module-boilerplate",
+  "name": "regular-check",
   "version": "0.1.0",
   "description": "Using rollup.js to build, a re-usable NPM module for run in nodejs and browser.",
   "main": "./dist/index.common.js",
@@ -96,17 +96,9 @@
   "engines": {
     "node": ">=10"
   },
-  "homepage": "https://github.com/zhengxs2018/shared-node-browser-library-boilerplate#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zhengxs2018/shared-node-browser-library-boilerplate.git"
-  },
-  "bugs": {
-    "url": "https://github.com/zhengxs2018/shared-node-browser-library-boilerplate/issues"
-  },
   "author": {
-    "name": "zhengxs2018",
-    "email": "zhengxs2018@foxmail.com"
+    "name": "wangbaichuan",
+    "email": "fengjin824@gmail.com"
   },
   "license": "MIT"
 }
