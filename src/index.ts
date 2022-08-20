@@ -1,5 +1,4 @@
-export * from './array'
-export * from './utils'
+export * from './function/index'
 
 export default {
   version: '__VERSION__',

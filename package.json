@@ -1,6 +1,6 @@
 {
-  "name": "regular-check",
-  "version": "0.1.0",
+  "name": "regular-checks",
+  "version": "0.1.1",
   "description": "Using rollup.js to build, a re-usable NPM module for run in nodejs and browser.",
   "main": "./dist/index.common.js",
   "module": "./dist/index.esm.js",
@@ -26,8 +26,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "preversion": "npm run lint && npm test",
     "version": "npm run changelog",
-    "postversion": "git push --follow-tags",
-    "prepublishOnly": "npm run build"
+    "postversion": "git push --follow-tags"
   },
   "publishConfig": {
     "access": "public"
